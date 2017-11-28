@@ -1,0 +1,12 @@
+.wholesite {
+	@include flexbox;
+}
+
+.index {
+	width: 100%;
+	margin-top: $space;
+	@include flexbox;
+	@include justify-content(space-around);
+	@include align-items(flex-start);
+	background: $light-bg;
+}

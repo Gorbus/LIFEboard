@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+
+@mixin fontFamily{
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+$space: 1.3rem;
+
+//FONT-SIZES
+
+$small-font-size: 1.1rem;
+$base-font-size: 1.3rem;
+$medium-font-size: 1.4rem;
+$large-font-size: 1.7rem;
+
+//COLORS
+
+$light-bg: #ECF2F6;
+$medium-bg: #F1F3F2;
+$widget-title-bg: #607A99;
+$dark-bg: #353942;
+
+$light-font-color: #C9CED2;
+$font-color: #5D5F60;
+$border-color: #E7EAEC;
+
+$cta1-color: #D1DADE;
+$cta2-color: #2CC5C6;
+$cta3-color: #E2624B;

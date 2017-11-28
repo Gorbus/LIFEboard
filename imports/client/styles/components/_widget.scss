@@ -1,0 +1,131 @@
+.widget {
+	@include flexbox;
+	@include flex-direction(column);
+	min-width: 32rem;
+	border: 1px solid $cta1-color;
+	background: white;
+	border-radius: 3px;
+}
+
+.widget__exchange {
+	min-width: 64rem;
+}
+
+.part1, .part2 {
+	@include flexbox;
+	@include flex-direction(column);
+	padding: $space;
+	width: 50%;
+}
+
+.widget__title{
+	@include flexbox;
+	@include justify-content(space-between);
+	@include align-items(center);
+	background: $widget-title-bg;
+	color: white;
+	font-weight: 900;
+	font-size: $large-font-size;
+	text-transform: uppercase;
+	padding-left: $space;
+	padding-right: $space;
+	border-radius: 3px 3px 0 0;
+}
+
+.wigdet__title-name{
+	margin-top: $space;
+	margin-bottom: $space;
+	@include align-self(flex-start);
+}
+
+.widget__title-updated{
+	font-size: $small-font-size;
+}
+
+.widget__content {
+	@include flexbox;
+	@include flex-direction(column);
+	padding: $space;
+}
+
+.widget__content__exchange {
+	@include flex-direction(row);
+	padding-top: 0;
+}
+
+.cmcData {
+	@include flexbox;
+	@include justify-content(space-between);
+	margin-top: $space / 3;
+	font-size: $medium-font-size;
+}
+
+.cmcData__info {
+	font-weight: 700;
+}
+
+.trades, .orders {
+	@include flexbox;
+	@include flex-direction(column)
+	padding-bottom: $space;
+}
+
+.trade {
+	width: 100%;
+	@include flexbox;
+	@include justify-content(space-around);
+	@include align-items(center);
+}
+
+.trade__data {
+	width: 20%;
+	text-align: center;
+}
+
+.trade__quantity {
+	text-align: right;
+	box-sizing: border-box;
+	padding-right: 2 * $space;
+}
+
+.trade__quantity__title {
+	padding-right: 3 * $space;
+}
+
+.trade__title, .ob__title {
+	font-weight: 700;
+	margin-top: $space;
+	margin-bottom: $space / 3;
+}
+
+.last10 {
+	text-align: center;
+	padding-top: $space;
+	width: 100%;
+	border-top: 1px solid $light-bg;
+}
+
+.order__book {
+	@include flexbox;
+}
+
+.ob__ask, .ob__bid {
+	width: 50%;
+	@include flexbox;
+	@include flex-direction(column)
+}
+
+.one__bid, .one__ask {
+	width: 100%;
+	@include flexbox;
+	@include justify-content(space-around);
+}
+
+.ob__bid {
+	border-right: 1px solid $light-bg;
+}
+
+.ob__data {
+	width: 33%;
+	text-align: center;
+}

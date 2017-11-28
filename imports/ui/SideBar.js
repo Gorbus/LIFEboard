@@ -2,6 +2,6 @@ import React from 'react';
 
 export default () => {
 	return (
-		<div>Header</div>
+		<div className="sidebar">SideBar</div>
 	)
 }
