@@ -4,6 +4,7 @@ import React from 'react';
 import WidgetCMC from './WidgetCMC';
 import WidgetHitBtc from './WidgetHitBtc';
 import WidgetCE from './WidgetCE';
+import WidgetTidex from './WidgetTidex';
 
 
 export default class Index extends React.Component{
@@ -12,7 +13,8 @@ export default class Index extends React.Component{
 		this.state = {
 			cmcData : null,
 			hitBtcData: null,
-			CeData : null
+			CeData : null,
+			tidexData: null
 		}
 
 		this.callApi = this.callApi.bind(this);
@@ -35,15 +37,24 @@ export default class Index extends React.Component{
 			this.setState(() => ({ CeData : data}))
 		})
 
+		Meteor.call('getTidexData', (err, data) => {
+			this.setState(() => ({ tidexData : data}))
+		})
+
 		setTimeout(() => this.callApi(), 15000)
 	}
 
 	render(){
 		return (
 			<div className="index">
-				<WidgetCMC title={'Coin Market Cap'} cmcData={this.state.cmcData} />
-				<WidgetHitBtc title={'Hitbtc'} hitBtcData={this.state.hitBtcData} />
-				<WidgetCE title={'Coin Exchange'} CeData={this.state.CeData} />
+				<div className="index__first">
+					<WidgetCMC title={'Coin Market Cap'} cmcData={this.state.cmcData} />
+				</div>
+				<div className="index__second">
+					<WidgetHitBtc title={'Hitbtc'} hitBtcData={this.state.hitBtcData} />
+					<WidgetCE title={'Coin Exchange'} CeData={this.state.CeData} />
+					<WidgetTidex title={'Tidex'} tidexData={this.state.tidexData} />
+				</div>
 			</div>
 		)
 	}

@@ -37,6 +37,19 @@ Meteor.methods({
 		data.push(result2);
 
 		return data;
-	}
+	},
+
+	getTidexData(){
+		let data = []
+		let convertAsyncToSync = Meteor.wrapAsync(HTTP.call);
+		let result1 = convertAsyncToSync('GET', 'https://api.tidex.com/api/3/ticker/life_btc', {});
+		data.push(result1);
+		let result2 = convertAsyncToSync('GET', 'https://api.tidex.com/api/3/trades/life_btc', {});
+		data.push(result2);
+		let result3 = convertAsyncToSync('GET', 'https://api.tidex.com/api/3/depth/life_btc', {});
+		data.push(result3);
+
+		return data;
+	},
 
 });

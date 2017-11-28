@@ -53,7 +53,7 @@ export default (props) => {
 		let lastAsks = [];
 		let sum = 0;
 		let max = 25;
-		let id = 20;
+		let id = 1000;
 		if(asks.length < 25) {
 			max = asks.length;
 		}
@@ -76,7 +76,6 @@ export default (props) => {
 	if (props.CeData){
 		let ticker = props.CeData[0].data.result;
 		let orderBook = props.CeData[1].data.result; 
-		console.log(props.CeData);
 		return (
 			<div className="widget widget__exchange">
 				<div className="widget__title">

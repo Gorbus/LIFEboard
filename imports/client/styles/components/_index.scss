@@ -1,0 +1,17 @@
+.wholesite {
+	@include flexbox;
+}
+
+.index {
+	width: 100%;
+	margin-top: $space;
+	@include flexbox;
+	@include flex-direction(column);
+	background: $light-bg;
+}
+
+.index__first, .index__second {
+	@include flexbox;
+	@include justify-content(space-between);
+	@include flex-wrap(wrap);
+}

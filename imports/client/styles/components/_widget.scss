@@ -5,10 +5,12 @@
 	border: 1px solid $cta1-color;
 	background: white;
 	border-radius: 3px;
+	margin: $space / 2;
 }
 
 .widget__exchange {
-	min-width: 64rem;
+	min-width: 52rem;
+	width: 30%;
 }
 
 .part1, .part2 {
@@ -80,6 +82,14 @@
 .trade__data {
 	width: 20%;
 	text-align: center;
+}
+
+.trade__side {
+	width: 10%;
+}
+
+.trade__time {
+	width: 30%;
 }
 
 .trade__quantity {
