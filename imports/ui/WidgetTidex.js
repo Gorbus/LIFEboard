@@ -93,8 +93,8 @@ export default (props) => {
 							<div className='cmcData__info'>{'฿ ' + parseFloat(ticker.last).toLocaleString('en', {minimumFractionDigits: 8})}</div>
 						</div>
 						<div className='cmcData'>
-							<div className='cmcData__title'>Price 24h ago:</div>
-							<div className='cmcData__info'>{'฿ ' + parseFloat(ticker.open).toLocaleString('en', {minimumFractionDigits: 8})}</div>
+							<div className='cmcData__title'>Average Price over 24h:</div>
+							<div className='cmcData__info'>{'฿ ' + parseFloat(ticker.avg).toLocaleString('en', {minimumFractionDigits: 8})}</div>
 						</div>
 						<div className='cmcData'>
 							<div className='cmcData__title'>Ask (BTC):</div>

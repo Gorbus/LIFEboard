@@ -139,3 +139,33 @@
 	width: 33%;
 	text-align: center;
 }
+
+.widget-fb {
+	@include flexbox;
+	@include flex-direction(column);
+	min-width: 38rem;
+	border: 1px solid $cta1-color;
+	background: white;
+	border-radius: 3px;
+	margin: $space / 2;
+}
+
+.widget__content__fb {
+	width: 100%;
+	background: white;
+}
+
+.timeline-viewport {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+.widget_cmc, .widget_infos{
+	@include align-self(flex-start);
+}
+
+.widget__content{
+	ul {
+		margin-left: 2 * $space;
+	}
+}

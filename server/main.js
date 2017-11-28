@@ -50,6 +50,5 @@ Meteor.methods({
 		data.push(result3);
 
 		return data;
-	},
-
+	}
 });

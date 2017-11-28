@@ -4,7 +4,7 @@ export default (props) => {
 	if (props.cmcData){
 		let data = props.cmcData.data[0];
 		return (
-			<div className="widget">
+			<div className="widget widget_cmc">
 				<div className="widget__title">
 					<div className="wigdet__title-name">{props.title}</div>
 					<div className="widget__title-updated">{moment(parseFloat(data.last_updated) * 1000).format('DD/MM/YYYY')}</div>
