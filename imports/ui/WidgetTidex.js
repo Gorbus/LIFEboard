@@ -78,8 +78,6 @@ export default (props) => {
 		let ticker = props.tidexData[0].data.life_btc;
 		let trades = props.tidexData[1].data.life_btc;
 		let orderBook = props.tidexData[2].data.life_btc;
-
-		console.log(props.tidexData);
 		return (
 			<div className="widget widget__exchange">
 				<div className="widget__title">
