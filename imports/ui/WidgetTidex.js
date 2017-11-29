@@ -131,7 +131,7 @@ export default (props) => {
 								<div className="ob__title ob__data ob__amount">Amount</div>
 								<div className="ob__title ob__data ob__bid-value">Bid</div>
 							</div>
-							{ renderBid(orderBook.bids) }
+							{ orderBook ? renderBid(orderBook.bids) : undefined }
 						</div>
 						<div className="ob__ask">
 							<div className="one__ask">
@@ -139,7 +139,7 @@ export default (props) => {
 								<div className="ob__title ob__data ob__amount">Amount</div>
 								<div className="ob__title ob__data ob__sum">Sum</div>
 							</div>
-							{ renderAsk(orderBook.asks) }
+							{ orderBook ? renderAsk(orderBook.asks) : undefined }
 						</div>
 					</div>
 				</div>
