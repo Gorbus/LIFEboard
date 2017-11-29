@@ -29,26 +29,30 @@ export default class Index extends React.Component{
 
 	callApi() {
 		Meteor.call('getCMCdata', (err, data) => {
-			this.setState(() => ({ cmcData : data}))
+			if(data){
+				this.setState(() => ({ cmcData : data}))	
+			}
 		})
 
 		Meteor.call('getHitBtcData', (err, data) => {
-			this.setState(() => ({ hitBtcData : data}))
+			if(data){
+				this.setState(() => ({ hitBtcData : data}))
+			}
 		})
 
 		Meteor.call('getCeData', (err, data) => {
-			this.setState(() => ({ CeData : data}))
+			if(data){
+				this.setState(() => ({ CeData : data}))
+			}
 		})
 
 		Meteor.call('getTidexData', (err, data) => {
-			this.setState(() => ({ tidexData : data}))
+			if(data){
+				this.setState(() => ({ tidexData : data}))
+			}
 		})
 
-		// Meteor.call('getFacebookData', (err, data) => {
-		// 	this.setState(() => ({ FbData : data}))
-		// })
-
-		setTimeout(() => this.callApi(), 15000)
+		setTimeout(() => this.callApi(), 45000)
 	}
 
 	render(){

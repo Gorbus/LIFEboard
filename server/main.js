@@ -2,7 +2,6 @@ import { Meteor } from 'meteor/meteor';
 import { WebApp } from 'meteor/webapp';
 import { HTTP } from 'meteor/http';
 
-
 Meteor.startup(() => {
 });
 
