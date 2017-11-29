@@ -47,14 +47,12 @@ export default class Index extends React.Component{
 		})
 
 		Meteor.call('getTidexData', (err, data) => {
-			console.log(err);
 			if(data && !err){
-				console.log(data);
 				this.setState(() => ({ tidexData : data}))
 			}
 		})
 
-		setTimeout(() => this.callApi(), 5000)
+		setTimeout(() => this.callApi(), 45000)
 	}
 
 	render(){

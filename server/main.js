@@ -48,6 +48,10 @@ Meteor.methods({
 		let result3 = convertAsyncToSync('GET', 'https://api.tidex.com/api/3/depth/life_btc', {});
 		data.push(result3);
 
-		return data;
+		if (result1 && result2 && result3){
+			return data;
+		} else {
+			return undefined;
+		}
 	}
 });
