@@ -7,11 +7,13 @@
 	margin-top: $space;
 	@include flexbox;
 	@include flex-direction(column);
-	background: $light-bg;
+	background: transparent;
 }
 
 .index__first, .index__second {
 	@include flexbox;
 	@include justify-content(flex-start);
 	@include flex-wrap(wrap);
+	margin-top: 2 * $space;
+	@include align-items(flex-start);
 }

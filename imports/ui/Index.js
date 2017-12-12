@@ -8,6 +8,8 @@ import WidgetTidex from './WidgetTidex';
 import WidgetFb from './WidgetFb';
 import WidgetTwitter from './WidgetTwitter';
 import WidgetInfos from './WidgetInfos';
+import WidgetIcons from './WidgetIcons';
+
 
 export default class Index extends React.Component{
 	constructor(props){
@@ -59,7 +61,10 @@ export default class Index extends React.Component{
 		return (
 			<div className="index">
 				<div className="index__first">
-					<WidgetInfos />
+					<div className="general__widgets">
+						<WidgetIcons />
+						<WidgetInfos />
+					</div>
 					<WidgetCMC title={'Coin Market Cap'} cmcData={this.state.cmcData} />
 					<WidgetTwitter />
 					<WidgetFb />

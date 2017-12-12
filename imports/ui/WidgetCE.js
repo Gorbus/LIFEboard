@@ -86,7 +86,7 @@ export default (props) => {
 					<div className='part1'>
 						<div className='cmcData'>
 							<div className='cmcData__title'>Last price (BTC):</div>
-							<div className='cmcData__info'>{'฿ ' + parseFloat(ticker.LastPrice).toLocaleString('en', {minimumFractionDigits: 8})}</div>
+							<div className='cmcData__info exchange__last__price'>{'฿ ' + parseFloat(ticker.LastPrice).toLocaleString('en', {minimumFractionDigits: 8})}</div>
 						</div>
 						<div className='cmcData'>
 							<div className='cmcData__title'>Change 24h:</div>

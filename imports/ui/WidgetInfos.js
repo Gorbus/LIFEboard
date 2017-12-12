@@ -14,10 +14,7 @@ export default (props) => {
 						<li><a target="_blank" href="http://card.lifelabs.io">Card pre-registration website</a></li>
 						<li><a target="_blank" href="https://www.lifelabs.io/life-white-paper/">Whitepaper</a></li>
 						<li><a target="_blank" href="https://bitcointalk.org/index.php?topic=2196925">Bitcoin Talk</a></li>
-						<li><a target="_blank" href="https://t.me/joinchat/HFVijQ3hyhyQZa6LQCE-NQ">Telegram</a></li>
-						<li><a target="_blank" href="https://t.me/LIFE_updates">Announcement Telegram</a></li>
 						<li><a target="_blank" href="https://etherscan.io/token/0xff18dbc487b4c2e3222d115952babfda8ba52f5f">Explorer Etherscan</a></li>
-
 					</ul>
 				</div>
 		</div>

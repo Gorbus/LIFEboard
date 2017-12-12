@@ -2,15 +2,39 @@
 	@include flexbox;
 	@include flex-direction(column);
 	min-width: 32rem;
-	border: 1px solid $cta1-color;
-	background: white;
+	background: $background-widget;
 	border-radius: 3px;
-	margin: $space / 2;
 }
 
 .widget__exchange {
 	min-width: 52rem;
-	width: 30%;
+	width: 32%;
+	margin: 0 auto;
+}
+
+.general__widgets, .widget_cmc, .widget-twitter, .widget-fb {
+	width: 24%;
+	margin: 0 auto;
+	min-height: 48rem;
+}
+
+
+.general__widgets {
+	@include flexbox;
+	@include flex-direction(column);
+	@include justify-content(space-between);
+	@include align-items(stretch);
+}
+
+.widget_infos, .widget__icons {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+}
+
+.widget_infos {
+	margin-top: $space;
+	@include flex(1);
 }
 
 .part1, .part2 {
@@ -24,8 +48,7 @@
 	@include flexbox;
 	@include justify-content(space-between);
 	@include align-items(center);
-	background: $widget-title-bg;
-	color: white;
+	color: $light-font-color;
 	font-weight: 900;
 	font-size: $large-font-size;
 	text-transform: uppercase;
@@ -58,8 +81,19 @@
 .cmcData {
 	@include flexbox;
 	@include justify-content(space-between);
+	@include align-items(flex-end);
 	margin-top: $space / 3;
 	font-size: $medium-font-size;
+}
+
+.cmcData__last__price {
+	@include flex-direction(column);
+	margin-bottom: 2 * $space;
+}
+
+.last__price__btc {
+	font-size: 5rem;
+	color: $cta-color;
 }
 
 .cmcData__info {
@@ -140,14 +174,15 @@
 	text-align: center;
 }
 
-.widget-fb {
+.widget-fb, .widget-twitter {
 	@include flexbox;
 	@include flex-direction(column);
 	min-width: 38rem;
-	border: 1px solid $cta1-color;
-	background: white;
 	border-radius: 3px;
-	margin: $space / 2;
+	background: $background-widget;
+}
+.timeline-Tweet-text {
+	color: $font-color;
 }
 
 .widget__content__fb {
@@ -168,4 +203,37 @@
 	ul {
 		margin-left: 2 * $space;
 	}
+	li {
+		font-size: $medium-font-size;
+	}
+}
+
+.logo__life {
+	width: 16rem;
+}
+
+.icons {
+	width: 3.6rem;
+	margin-left: $space;
+}
+
+.social__icons {
+	@include flexbox;
+	@include justify-content(center);
+	margin-top: $space;
+}
+
+.logo__life, .logo__subtitle {
+	@include align-self(center);
+	text-align: center;
+}
+
+.logo__subtitle {
+	font-style: italic;
+	font-size: 1.8rem;
+}
+
+.exchange__last__price {
+	color: $cta-color;
+	font-size: $large-font-size;
 }

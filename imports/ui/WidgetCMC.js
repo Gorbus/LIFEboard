@@ -10,17 +10,17 @@ export default (props) => {
 					<div className="widget__title-updated">{moment(parseFloat(data.last_updated) * 1000).format('DD/MM/YYYY')}</div>
 				</div>
 				<div className="widget__content">
+					<div className='cmcData cmcData__last__price'>
+						<div className='cmcData__title'>Last price (BTC):</div>
+						<div className='cmcData__info last__price__btc'>{'฿ ' + parseFloat(data.price_btc).toLocaleString('en', {minimumFractionDigits: 8})}</div>
+					</div>
+					<div className='cmcData cmcData__last__price'>
+						<div className='cmcData__title'>Market capitalization (USD):</div>
+						<div className='cmcData__info last__price__btc'>{'$ ' + parseFloat(data.market_cap_usd).toLocaleString('en')}</div>
+					</div>
 					<div className='cmcData'>
 						<div className='cmcData__title'>Last price (USD):</div>
 						<div className='cmcData__info'>{'$ ' + parseFloat(data.price_usd).toLocaleString('en', {minimumFractionDigits: 8})}</div>
-					</div>
-					<div className='cmcData'>
-						<div className='cmcData__title'>Last price (BTC):</div>
-						<div className='cmcData__info'>{'฿ ' + parseFloat(data.price_btc).toLocaleString('en', {minimumFractionDigits: 8})}</div>
-					</div>
-					<div className='cmcData'>
-						<div className='cmcData__title'>Market capitalization (USD):</div>
-						<div className='cmcData__info'>{'$ ' + parseFloat(data.market_cap_usd).toLocaleString('en')}</div>
 					</div>
 					<div className='cmcData'>
 						<div className='cmcData__title'>Market capitalization rank:</div>
