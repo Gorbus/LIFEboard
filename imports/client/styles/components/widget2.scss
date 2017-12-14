@@ -5,38 +5,33 @@
 	background: $background-widget;
 	border-radius: 3px;
 	margin-top: $space;
+	width: 24%;
+	margin-left: $space;
 }
 
 .widget__exchange {
-	min-width: 52rem;
 	width: 32%;
-	margin-left: auto;
-	margin-right: auto;
+	min-width: 48rem;
 }
-
-.general__widgets, .widget_cmc, .widget-twitter, .widget-fb {
-	width: 24%;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-
 .general__widgets {
 	@include flexbox;
 	@include flex-direction(column);
 	@include justify-content(space-between);
 }
 
-.widget_infos, .widget__icons {
-	padding: 0;
-	margin: 0;
-	width: 100%;
+.widget-fb, .widget-twitter {
+	min-width: 38rem;
+	border-radius: 3px;
+}
+
+.widget-fb {
+	width: 38rem;
 }
 
 .widget_infos {
-	margin-top: $space;
 	@include flex(1);
 }
+
 
 .part1, .part2 {
 	@include flexbox;
@@ -68,6 +63,8 @@
 	font-size: $small-font-size;
 }
 
+
+
 .widget__content {
 	@include flexbox;
 	@include flex-direction(column);
@@ -87,6 +84,7 @@
 	font-size: $medium-font-size;
 }
 
+
 .cmcData__last__price {
 	@include flex-direction(column);
 	margin-bottom: 2 * $space;
@@ -99,6 +97,45 @@
 
 .cmcData__info {
 	font-weight: 700;
+}
+
+.widget__content{
+	ul {
+		margin-left: 2 * $space;
+	}
+	li {
+		font-size: $medium-font-size;
+	}
+}
+
+.logo__life {
+	width: 16rem;
+}
+
+.icons {
+	width: 3.6rem;
+	margin-left: $space;
+}
+
+.social__icons {
+	@include flexbox;
+	@include justify-content(center);
+	margin-top: $space;
+}
+
+.logo__life, .logo__subtitle {
+	@include align-self(center);
+	text-align: center;
+}
+
+.logo__subtitle {
+	font-style: italic;
+	font-size: 1.8rem;
+}
+
+.exchange__last__price {
+	color: $cta-color;
+	font-size: $large-font-size;
 }
 
 .trades, .orders {
@@ -175,63 +212,45 @@
 	text-align: center;
 }
 
-.widget-fb, .widget-twitter {
-	min-width: 38rem;
-	border-radius: 3px;
-}
-.timeline-Tweet-text {
-	color: $font-color;
-}
-
-.widget__content__fb {
-	width: 100%;
-	background: white;
-}
-
-.timeline-viewport {
-    width: 0px;  /* remove scrollbar space */
-    background: transparent;  /* optional: just make scrollbar invisible */
-}
-
-.widget_cmc {
-	@include align-self(flex-start);
-}
-
-.widget__content{
-	ul {
-		margin-left: 2 * $space;
+@media screen and (max-width: 620px) {
+	.wholesite {
+		padding: 0;
 	}
-	li {
-		font-size: $medium-font-size;
+
+	.index__first, .index__second {
+		@include flex-direction(column);
 	}
-}
 
-.logo__life {
-	width: 16rem;
-}
+	.widget {
+		width: 95vw;
+		min-width: 95vw;
+		margin-left: auto;
+		margin-right: auto;
+	}
 
-.icons {
-	width: 3.6rem;
-	margin-left: $space;
-}
+	.order__book {
+		@include flex-direction(column);
+	}
 
-.social__icons {
-	@include flexbox;
-	@include justify-content(center);
-	margin-top: $space;
-}
+	.ob__bid, .ob__ask, .part1, .part2 {
+		width: 100%;
+	}
 
-.logo__life, .logo__subtitle {
-	@include align-self(center);
-	text-align: center;
-}
+	.widget__content__exchange {
+		@include flex-direction(column);
+	}
 
-.logo__subtitle {
-	font-style: italic;
-	font-size: 1.8rem;
-}
+	.ob__bid {
+		border: 0;
+	}
 
-.exchange__last__price {
-	color: $cta-color;
-	font-size: $large-font-size;
+	.widget__title, .widget__content, .part1, .part2 {
+		padding: 0;
+		padding-left: $space / 4;
+		padding-right: $space / 2;
+	}
+
+	.widget__content {
+		padding-bottom: $space /2;
+	}
 }

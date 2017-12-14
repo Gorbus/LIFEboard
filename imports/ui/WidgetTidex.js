@@ -11,7 +11,7 @@ export default (props) => {
 		for (let i = 0; i < max; i++){
 			trade = trades[i];
 			tradeDiv = (
-				<div key={trade.timestamp} className='trade'>
+				<div key={`${trade.timestamp} + ${trade.amount}`} className='trade'>
 					<div className="trade__data trade__side">{trade.type === "bid" ? "buy" : "sell"}</div>
 					<div className="trade__data trade__time">{moment(trade.timestamp * 1000).format('DD/MM/YYYY - HH:mm:ss')}</div>
 					<div className="trade__data trade__price">{'฿ ' + parseFloat(trade.price).toLocaleString('en', {minimumFractionDigits: 8})}</div>
