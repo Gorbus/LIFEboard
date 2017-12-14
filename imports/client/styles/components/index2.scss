@@ -1,5 +1,7 @@
 .wholesite {
 	@include flexbox;
+	@include flex-direction(column);
+	@include justify-content(space-between);
 	padding: $space;
 }
 
@@ -14,4 +16,21 @@
 	@include flexbox;
 	@include justify-content(space-between);
 	@include flex-wrap(wrap);
+}
+
+.footer {
+	@include flexbox;
+	@include flex-direction(column);
+	@include align-items(center);
+	margin-top: $space * 3;
+	margin-bottom: $space;
+	font-style: italic;
+	color: #757575;
+	text-align: center;
+	.44dev {
+		color: $font-color;
+	}
+	div {
+		margin-bottom: $space;
+	}
 }
