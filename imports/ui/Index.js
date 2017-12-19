@@ -19,7 +19,8 @@ export default class Index extends React.Component{
 			hitBtcData: null,
 			CeData : null,
 			tidexData: null,
-			FbData : null
+			FbData : null,
+			btcData: null
 		}
 
 		this.callApi = this.callApi.bind(this);
@@ -31,8 +32,9 @@ export default class Index extends React.Component{
 
 	callApi() {
 		Meteor.call('getCMCdata', (err, data) => {
+			console.log(data)
 			if(data && !err){
-				this.setState(() => ({ cmcData : data}))	
+				this.setState(() => ({ cmcData : data[0], btcData: data[1]}))	
 			}
 		})
 
@@ -58,12 +60,13 @@ export default class Index extends React.Component{
 	}
 
 	render(){
+		console.log(this.state.btcData);
 		return (
 			<div className="index">
 				<div className="index__first">
 					<div className="general__widgets">
 						<WidgetIcons />
-						<WidgetInfos />
+						<WidgetInfos btcValue={this.state.btcData ? this.state.btcData.data[0].price_usd : null} lifeValue={this.state.cmcData ? this.state.cmcData.data[0].price_btc : null}/>
 					</div>
 					<WidgetCMC title={'Coin Market Cap'} cmcData={this.state.cmcData} />
 					<WidgetTwitter />

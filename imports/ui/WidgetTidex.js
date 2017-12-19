@@ -114,11 +114,11 @@ export default (props) => {
 						</div>
 						<div className='cmcData'>
 							<div className='cmcData__title'>Volume 24h (LIFE):</div>
-							<div className='cmcData__info'>{parseFloat(ticker.vol).toLocaleString('en') + ' LIFE'}</div>
+							<div className='cmcData__info'>{parseFloat(ticker.vol_cur).toLocaleString('en') + ' LIFE'}</div>
 						</div>
 						<div className='cmcData'>
 							<div className='cmcData__title'>Volume 24h (BTC):</div>
-							<div className='cmcData__info'>{'฿ ' + parseFloat(ticker.vol_cur).toLocaleString('en', {minimumFractionDigits: 8})}</div>
+							<div className='cmcData__info'>{'฿ ' + parseFloat(ticker.vol).toLocaleString('en', {minimumFractionDigits: 8})}</div>
 						</div>
 					</div>
 				</div>

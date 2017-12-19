@@ -9,8 +9,12 @@ Meteor.startup(() => {
 Meteor.methods({
 	getCMCdata(){
 		let convertAsyncToSync = Meteor.wrapAsync(HTTP.call);
+		let data = [];
 		let result = convertAsyncToSync('GET', 'https://api.coinmarketcap.com/v1/ticker/life', {});
-		return result;
+		data.push(result);
+		let result2 = convertAsyncToSync('GET', 'https://api.coinmarketcap.com/v1/ticker/bitcoin', {});
+		data.push(result2);
+		return data;
 	},
 
 

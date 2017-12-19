@@ -16,7 +16,7 @@ export default (props) => {
 			    }}
 			    options={{
 			      username: 'LIFEtoken_',
-			      height: '400',
+			      height: '475',
 			      chrome: 'nofooter noscrollbar noheader'
 			    }}
 			    onLoad={() => console.log('Timeline is loaded!')}
