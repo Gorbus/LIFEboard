@@ -23,21 +23,16 @@ export default class Index extends React.Component{
 			btcData: null
 		}
 
-		this.callApi = this.callApi.bind(this);
+		this.callApiExchanges = this.callApiExchanges.bind(this);
+		this.callApiCMC = this.callApiCMC.bind(this);
 	}
 
 	componentDidMount(){
-		this.callApi()
+		this.callApiExchanges();
+		this.callApiCMC();
 	}
 
-	callApi() {
-		Meteor.call('getCMCdata', (err, data) => {
-			console.log(data)
-			if(data && !err){
-				this.setState(() => ({ cmcData : data[0], btcData: data[1]}))	
-			}
-		})
-
+	callApiExchanges() {
 		Meteor.call('getHitBtcData', (err, data) => {
 			if(data && !err){
 				this.setState(() => ({ hitBtcData : data}))
@@ -56,11 +51,20 @@ export default class Index extends React.Component{
 			}
 		})
 
-		setTimeout(() => this.callApi(), 45000)
+		setTimeout(() => this.callApiExchanges(), 45000)
+	}
+
+	callApiCMC() {
+		Meteor.call('getCMCdata', (err, data) => {
+			console.log(data)
+			if(data && !err){
+				this.setState(() => ({ cmcData : data[0], btcData: data[1]}))	
+			}
+		})
+		setTimeout(() => this.callApiCMC(), 180000)
 	}
 
 	render(){
-		console.log(this.state.btcData);
 		return (
 			<div className="index">
 				<div className="index__first">

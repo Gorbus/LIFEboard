@@ -19,11 +19,23 @@ export default class WidgetInfos extends React.Component {
 		this.lifeValueChange = this.lifeValueChange.bind(this);
 	}
 
+	shouldComponentUpdate(nextProps, nextState){
+		if (this.props.btcValue === nextProps.btcValue && this.props.lifeValue === nextProps.lifeValue){
+			if (this.state != nextState){
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+		return true;
+	}
+
 	componentDidUpdate(prevProps) {
 		if (prevProps != this.props){
 			this.setState(() => ({
-				btcValue : parseFloat(this.props.btcValue),
-				lifeValue : parseFloat(this.props.lifeValue) * 100000000,
+				btcValue : parseFloat(this.props.btcValue) || 15000,
+				lifeValue : parseFloat(this.props.lifeValue) * 100000000 || 1,
 				lifeUnits : 100000,
 				totalBtc : parseFloat(this.props.lifeValue) * 100000,
 				totalUsd : parseFloat(this.props.btcValue) * parseFloat(this.props.lifeValue) * 100000
@@ -58,7 +70,6 @@ export default class WidgetInfos extends React.Component {
 	}
 
 	render() {
-		console.log(this.props.lifeValue);
 		return (
 			<div className="widget widget_infos">
 					<div className="widget__content">
