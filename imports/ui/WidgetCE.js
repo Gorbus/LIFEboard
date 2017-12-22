@@ -28,9 +28,9 @@ export default (props) => {
 	const renderBid = (bids) => {
 		let lastBids = [];
 		let sum = 0;
-		let max = 25;
+		let max = 40;
 		let id = 10;
-		if(bids.length < 25) {
+		if(bids.length < 40) {
 			max = bids.length;
 		}
 		for (let i = 0; i < max; i++){
@@ -52,9 +52,9 @@ export default (props) => {
 	const renderAsk = (asks) => {
 		let lastAsks = [];
 		let sum = 0;
-		let max = 25;
+		let max = 40;
 		let id = 1000;
-		if(asks.length < 25) {
+		if(asks.length < 40) {
 			max = asks.length;
 		}
 		for (let i = 0; i < max; i++){

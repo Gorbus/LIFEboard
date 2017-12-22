@@ -4,8 +4,8 @@ export default (props) => {
 
 	const renderLastTrades = (trades) => {
 		let lastTrades = []
-		let max = 10;
-		if(trades.length < 10) {
+		let max = 20;
+		if(trades.length < 20) {
 			max = trades.length;
 		}
 		for (let i = 0; i < max; i++){
@@ -28,8 +28,8 @@ export default (props) => {
 	const renderBid = (bids) => {
 		let lastBids = [];
 		let sum = 0;
-		let max = 10;
-		if(bids.length < 10) {
+		let max = 15;
+		if(bids.length < 15) {
 			max = bids.length;
 		}
 		for (let i = 0; i < max; i++){
@@ -50,8 +50,8 @@ export default (props) => {
 	const renderAsk = (asks) => {
 		let lastAsks = [];
 		let sum = 0;
-		let max = 10;
-		if(asks.length < 10) {
+		let max = 15;
+		if(asks.length < 15) {
 			max = asks.length;
 		}
 		for (let i = 0; i < max; i++){
