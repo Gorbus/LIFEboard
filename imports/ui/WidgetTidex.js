@@ -101,7 +101,7 @@ export default (props) => {
 						</div>
 						<div className='cmcData'>
 							<div className='cmcData__title'>Bid (BTC):</div>
-							<div className='cmcData__info'>{ticker.bid ? '฿ ' + parseFloat(ticker.buy).toLocaleString('en', {minimumFractionDigits: 8}) : "No bid"}</div>
+							<div className='cmcData__info'>{ticker ? (ticker.bid ? '฿ ' + parseFloat(ticker.buy).toLocaleString('en', {minimumFractionDigits: 8}) : "No bid") : ''}</div>
 						</div>
 					</div>
 					<div className='part2'>
