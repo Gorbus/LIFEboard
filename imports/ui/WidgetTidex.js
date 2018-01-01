@@ -75,6 +75,7 @@ export default (props) => {
 	}
 
 	if (props.tidexData){
+		console.log(props.tidexData);
 		let ticker = props.tidexData[0].data.life_btc;
 		let trades = props.tidexData[1].data.life_btc;
 		let orderBook = props.tidexData[2].data.life_btc;
@@ -82,21 +83,21 @@ export default (props) => {
 			<div className="widget widget__exchange">
 				<div className="widget__title">
 					<div className="wigdet__title-name">{props.title}</div>
-					<div className="widget__title-updated">updated @ {moment(ticker.updated * 1000).format('HH:mm:ss')}</div>
+					<div className="widget__title-updated">updated @ {ticker ? moment(ticker.updated * 1000).format('HH:mm:ss') : ''}</div>
 				</div>
 				<div className="widget__content widget__content__exchange">
 					<div className='part1'>
 						<div className='cmcData'>
 							<div className='cmcData__title'>Last price (BTC):</div>
-							<div className='cmcData__info exchange__last__price'>{'฿ ' + parseFloat(ticker.last).toLocaleString('en', {minimumFractionDigits: 8})}</div>
+							<div className='cmcData__info exchange__last__price'>{ticker ? '฿ ' + parseFloat(ticker.last).toLocaleString('en', {minimumFractionDigits: 8}) : ''}</div>
 						</div>
 						<div className='cmcData'>
 							<div className='cmcData__title'>Average Price over 24h:</div>
-							<div className='cmcData__info'>{'฿ ' + parseFloat(ticker.avg).toLocaleString('en', {minimumFractionDigits: 8})}</div>
+							<div className='cmcData__info'>{ticker ? '฿ ' + parseFloat(ticker.avg).toLocaleString('en', {minimumFractionDigits: 8}) : ''}</div>
 						</div>
 						<div className='cmcData'>
 							<div className='cmcData__title'>Ask (BTC):</div>
-							<div className='cmcData__info'>{'฿ ' + parseFloat(ticker.sell).toLocaleString('en', {minimumFractionDigits: 8})}</div>
+							<div className='cmcData__info'>{ticker ? '฿ ' + parseFloat(ticker.sell).toLocaleString('en', {minimumFractionDigits: 8}) : ''}</div>
 						</div>
 						<div className='cmcData'>
 							<div className='cmcData__title'>Bid (BTC):</div>
@@ -106,19 +107,19 @@ export default (props) => {
 					<div className='part2'>
 						<div className='cmcData'>
 							<div className='cmcData__title'>High (24h):</div>
-							<div className='cmcData__info'>{'฿ ' + parseFloat(ticker.high).toLocaleString('en', {minimumFractionDigits: 8})}</div>
+							<div className='cmcData__info'>{ticker ? '฿ ' + parseFloat(ticker.high).toLocaleString('en', {minimumFractionDigits: 8}) : ''}</div>
 						</div>
 						<div className='cmcData'>
 							<div className='cmcData__title'>Low (24h):</div>
-							<div className='cmcData__info'>{'฿ ' + parseFloat(ticker.low).toLocaleString('en', {minimumFractionDigits: 8})}</div>
+							<div className='cmcData__info'>{ticker ? '฿ ' + parseFloat(ticker.low).toLocaleString('en', {minimumFractionDigits: 8}) : ''}</div>
 						</div>
 						<div className='cmcData'>
 							<div className='cmcData__title'>Volume 24h (LIFE):</div>
-							<div className='cmcData__info'>{parseFloat(ticker.vol_cur).toLocaleString('en') + ' LIFE'}</div>
+							<div className='cmcData__info'>{ticker ? parseFloat(ticker.vol_cur).toLocaleString('en') + ' LIFE' : ''}</div>
 						</div>
 						<div className='cmcData'>
 							<div className='cmcData__title'>Volume 24h (BTC):</div>
-							<div className='cmcData__info'>{'฿ ' + parseFloat(ticker.vol).toLocaleString('en', {minimumFractionDigits: 8})}</div>
+							<div className='cmcData__info'>{ticker ? '฿ ' + parseFloat(ticker.vol).toLocaleString('en', {minimumFractionDigits: 8}) : ''}</div>
 						</div>
 					</div>
 				</div>
@@ -161,7 +162,7 @@ export default (props) => {
 		return (
 			<div className="widget">
 				<div className="widget__title">{props.title}</div>
-				<div className="widget__content">Loading...</div>
+				<div className="widget__content">Loading or Tidex API not available...</div>
 			</div>
 		)
 	}
