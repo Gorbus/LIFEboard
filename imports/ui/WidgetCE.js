@@ -74,8 +74,9 @@ export default (props) => {
 	}
 
 	if (props.CeData){
+		console.log(props.CeData);
 		let ticker = props.CeData[0].data.result;
-		let orderBook = props.CeData[1].data.result; 
+		let orderBook = props.CeData[1].data ? props.CeData[1].data.result : undefined; 
 		return (
 			<div className="widget widget__exchange">
 				<div className="widget__title">
@@ -125,7 +126,7 @@ export default (props) => {
 								<div className="ob__title ob__data ob__amount">Amount</div>
 								<div className="ob__title ob__data ob__bid-value">Bid</div>
 							</div>
-							{ renderBid(orderBook.BuyOrders) }
+							{ props.CeData[1].data ? renderBid(orderBook.BuyOrders) : undefined}
 						</div>
 						<div className="ob__ask">
 							<div className="one__ask">
@@ -133,7 +134,7 @@ export default (props) => {
 								<div className="ob__title ob__data ob__amount">Amount</div>
 								<div className="ob__title ob__data ob__sum">Sum</div>
 							</div>
-							{ renderAsk(orderBook.SellOrders) }
+							{ props.CeData[1].data ? renderAsk(orderBook.SellOrders) : undefined }
 						</div>
 					</div>
 				</div>
