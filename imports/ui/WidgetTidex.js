@@ -26,6 +26,7 @@ export default (props) => {
 	}
 
 	const renderBid = (bids) => {
+		console.log('test');
 		let lastBids = [];
 		let sum = 0;
 		let max = 15;
