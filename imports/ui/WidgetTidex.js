@@ -36,12 +36,12 @@ export default (props) => {
 		for (let i = 0; i < max; i++){
 					bid = bids[i];
 					id = id + 1
-					sum = parseInt(sum) + parseInt(bid[0]);
+					sum = parseInt(sum) + parseInt(bid[1]);
 					bidDiv = (
 						<div key={`${bid[1]}${bid[0]}${id}`} className='one__bid'>
 							<div className="ob__data ob__sum">{parseFloat(sum).toLocaleString('en')}</div>
-							<div className="ob__data ob__amount">{parseFloat(bid[0]).toLocaleString('en')}</div>
-							<div className="ob__data ob__bid-value">{parseFloat(bid[1]).toLocaleString('en', {minimumFractionDigits: 8})}</div>
+							<div className="ob__data ob__amount">{parseFloat(bid[1]).toLocaleString('en')}</div>
+							<div className="ob__data ob__bid-value">{parseFloat(bid[0]).toLocaleString('en', {minimumFractionDigits: 8})}</div>
 						</div>
 						)
 					lastBids.push(bidDiv)
