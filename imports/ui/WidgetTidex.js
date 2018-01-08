@@ -26,7 +26,6 @@ export default (props) => {
 	}
 
 	const renderBid = (bids) => {
-		console.log('test');
 		let lastBids = [];
 		let sum = 0;
 		let max = 15;
@@ -76,7 +75,6 @@ export default (props) => {
 	}
 
 	if (props.tidexData){
-		console.log(props.tidexData);
 		let ticker = props.tidexData[0].data.life_btc;
 		let trades = props.tidexData[1].data.life_btc;
 		let orderBook = props.tidexData[2].data.life_btc;

@@ -56,7 +56,6 @@ export default class Index extends React.Component{
 
 	callApiCMC() {
 		Meteor.call('getCMCdata', (err, data) => {
-			console.log(data)
 			if(data && !err){
 				this.setState(() => ({ cmcData : data[0], btcData: data[1]}))	
 			}
