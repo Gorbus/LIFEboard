@@ -12,10 +12,10 @@ export default (props) => {
 			  <Timeline
 			    dataSource={{
 			      sourceType: 'profile',
-			      screenName: 'LIFEtoken_'
+			      screenName: 'LIFElabs'
 			    }}
 			    options={{
-			      username: 'LIFEtoken_',
+			      username: 'LIFElabsHQ',
 			      height: '475',
 			      chrome: 'nofooter noscrollbar noheader'
 			    }}
