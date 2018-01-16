@@ -40,7 +40,7 @@ export default (props) => {
 			bidDiv = (
 				<div key={`${bid.Price}${bid.Quantity}${bid.OrderTime}${id}`} className='one__bid'>
 					<div className="ob__data ob__sum">{parseFloat(sum).toLocaleString('en')}</div>
-					<div className="ob__data ob__amount">{parseFloat(bid.Quantity).toLocaleString('en')}</div>
+					<div className="ob__data ob__amount">{parseFloat(bid.Quantity).toLocaleString('en', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</div>
 					<div className="ob__data ob__bid-value">{parseFloat(bid.Price).toLocaleString('en', {minimumFractionDigits: 8})}</div>
 				</div>
 				)
@@ -64,7 +64,7 @@ export default (props) => {
 			askDiv = (
 				<div key={`${ask.Price}${ask.Quantity}${bid.OrderTime}${id}`} className='one__ask'>
 					<div className="ob__data ob__ask-value">{parseFloat(ask.Price).toLocaleString('en', {minimumFractionDigits: 8})}</div>
-					<div className="ob__data ob__amount">{parseFloat(ask.Quantity).toLocaleString('en')}</div>
+					<div className="ob__data ob__amount">{parseFloat(ask.Quantity).toLocaleString('en', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</div>
 					<div className="ob__data ob__sum">{parseFloat(sum).toLocaleString('en')}</div>
 				</div>
 				)

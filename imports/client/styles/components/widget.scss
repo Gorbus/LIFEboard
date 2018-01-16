@@ -218,6 +218,11 @@
 	text-align: center;
 }
 
+.ob__amount {
+	text-align: right;
+	margin-right: 2rem;
+}
+
 @media screen and (max-width: 620px) {
 	.wholesite {
 		padding: 0;
@@ -249,6 +254,8 @@
 	.ob__bid {
 		border: 0;
 	}
+
+
 
 	.widget__title, .widget__content, .part1, .part2 {
 		padding: 0;

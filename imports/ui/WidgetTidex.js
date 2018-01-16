@@ -40,7 +40,7 @@ export default (props) => {
 					bidDiv = (
 						<div key={`${bid[1]}${bid[0]}${id}`} className='one__bid'>
 							<div className="ob__data ob__sum">{parseFloat(sum).toLocaleString('en')}</div>
-							<div className="ob__data ob__amount">{parseFloat(bid[1]).toLocaleString('en')}</div>
+							<div className="ob__data ob__amount">{parseFloat(bid[1]).toLocaleString('en', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</div>
 							<div className="ob__data ob__bid-value">{parseFloat(bid[0]).toLocaleString('en', {minimumFractionDigits: 8})}</div>
 						</div>
 						)
@@ -65,7 +65,7 @@ export default (props) => {
 					askDiv = (
 						<div key={`${ask[1]}${ask[0]}${id}`} className='one__ask'>
 							<div className="ob__data ob__ask-value">{parseFloat(ask[0]).toLocaleString('en', {minimumFractionDigits: 8})}</div>
-							<div className="ob__data ob__amount">{parseFloat(ask[1]).toLocaleString('en')}</div>
+							<div className="ob__data ob__amount">{parseFloat(ask[1]).toLocaleString('en', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</div>
 							<div className="ob__data ob__sum">{parseFloat(sum).toLocaleString('en')}</div>
 						</div>
 						)

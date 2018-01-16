@@ -78,7 +78,6 @@ export default class WidgetInfos extends React.Component {
 						<div className="widget__infos__link"><a target="_blank" href="http://www.lifelabs.io">- Lifelabs Website</a></div>
 								<div className="widget__infos__link"><a target="_blank" href="http://token.lifelabs.io">- Life Token Website</a></div>
 								<div className="widget__infos__link"><a target="_blank" href="http://card.lifelabs.io">- Card pre-registration website</a></div>
-								<div className="widget__infos__link"><a target="_blank" href="https://www.instagram.com/lifelabshq">- LIFE Instagram</a></div>
 								<div className="widget__infos__link"><a target="_blank" href="https://www.lifelabs.io/life-white-paper/">- Whitepaper</a></div>
 								<div className="widget__infos__link"><a target="_blank" href="https://bitcointalk.org/index.php?topic=2196925">- Bitcoin Talk</a></div>
 								<div className="widget__infos__link"><a target="_blank" href="https://etherscan.io/token/0xff18dbc487b4c2e3222d115952babfda8ba52f5f">- Explorer Etherscan</a></div>
