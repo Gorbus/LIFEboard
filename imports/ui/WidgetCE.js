@@ -36,15 +36,17 @@ export default (props) => {
 		for (let i = 0; i < max; i++){
 			id = id + 1;
 			bid = bids[i];
-			sum = parseInt(sum) + parseInt(bid.Quantity);
-			bidDiv = (
-				<div key={`${bid.Price}${bid.Quantity}${bid.OrderTime}${id}`} className='one__bid'>
-					<div className="ob__data ob__sum">{parseFloat(sum).toLocaleString('en')}</div>
-					<div className="ob__data ob__amount">{parseFloat(bid.Quantity).toLocaleString('en', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</div>
-					<div className="ob__data ob__bid-value">{parseFloat(bid.Price).toLocaleString('en', {minimumFractionDigits: 8})}</div>
-				</div>
-				)
-			lastBids.push(bidDiv)
+			if(bid){
+				sum = parseInt(sum) + parseInt(bid.Quantity);
+				bidDiv = (
+					<div key={`${bid.Price}${bid.Quantity}${bid.OrderTime}${id}`} className='one__bid'>
+						<div className="ob__data ob__sum">{parseFloat(sum).toLocaleString('en')}</div>
+						<div className="ob__data ob__amount">{parseFloat(bid.Quantity).toLocaleString('en', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</div>
+						<div className="ob__data ob__bid-value">{parseFloat(bid.Price).toLocaleString('en', {minimumFractionDigits: 8})}</div>
+					</div>
+					)
+				lastBids.push(bidDiv)
+			}
 		}
 		return lastBids;
 	}
@@ -62,7 +64,7 @@ export default (props) => {
 			id = id + 1;
 			sum = parseInt(sum) + parseInt(ask.Quantity);
 			askDiv = (
-				<div key={`${ask.Price}${ask.Quantity}${bid.OrderTime}${id}`} className='one__ask'>
+				<div key={`${ask.Price}${ask.Quantity}${ask.OrderTime}${id}`} className='one__ask'>
 					<div className="ob__data ob__ask-value">{parseFloat(ask.Price).toLocaleString('en', {minimumFractionDigits: 8})}</div>
 					<div className="ob__data ob__amount">{parseFloat(ask.Quantity).toLocaleString('en', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</div>
 					<div className="ob__data ob__sum">{parseFloat(sum).toLocaleString('en')}</div>
