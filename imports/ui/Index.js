@@ -30,6 +30,12 @@ export default class Index extends React.Component{
 	componentDidMount(){
 		this.callApiExchanges();
 		this.callApiCMC();
+		Bert.alert({
+			title: 'Help Lifeboard.me',
+			message: 'If you want Lifeboard.me to continue beeing live, please consider donating to pay for hosting. ETH adress for donation is at the bottom of the page',
+			type: 'success',
+			style: 'fixed-top',
+		  });
 	}
 
 	callApiExchanges() {
