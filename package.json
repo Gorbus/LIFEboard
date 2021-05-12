@@ -17,6 +17,6 @@
     "react-router-dom": "^4.2.2",
     "react-twitter-widgets": "^1.7.1",
     "sass-flex-mixin": "^1.0.3",
-    "simpl-schema": "^0.3.2"
+    "simpl-schema": "^1.10.2"
   }
 }
